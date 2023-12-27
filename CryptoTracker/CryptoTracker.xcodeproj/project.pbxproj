@@ -11,6 +11,9 @@
 		CE56D3742B3C2A670089D1E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D3732B3C2A670089D1E8 /* ContentView.swift */; };
 		CE56D3762B3C2A680089D1E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE56D3752B3C2A680089D1E8 /* Assets.xcassets */; };
 		CE56D37A2B3C2A680089D1E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE56D3792B3C2A680089D1E8 /* Preview Assets.xcassets */; };
+		CE56D3882B3C34360089D1E8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D3872B3C34360089D1E8 /* HomeView.swift */; };
+		CE56D38C2B3C35B20089D1E8 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D38B2B3C35B20089D1E8 /* CircleButtonView.swift */; };
+		CE56D38E2B3C38710089D1E8 /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D38D2B3C38710089D1E8 /* CircleButtonAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		CE56D3752B3C2A680089D1E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE56D3772B3C2A680089D1E8 /* CryptoTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CryptoTracker.entitlements; sourceTree = "<group>"; };
 		CE56D3792B3C2A680089D1E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE56D3872B3C34360089D1E8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CE56D38B2B3C35B20089D1E8 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
+		CE56D38D2B3C38710089D1E8 /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			children = (
 				CE56D3712B3C2A670089D1E8 /* CryptoTrackerApp.swift */,
 				CE56D3732B3C2A670089D1E8 /* ContentView.swift */,
+				CE56D3832B3C34010089D1E8 /* Core */,
 				CE56D3752B3C2A680089D1E8 /* Assets.xcassets */,
 				CE56D3772B3C2A680089D1E8 /* CryptoTracker.entitlements */,
 				CE56D3782B3C2A680089D1E8 /* Preview Content */,
@@ -67,6 +74,56 @@
 				CE56D3792B3C2A680089D1E8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE56D3832B3C34010089D1E8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CE56D3892B3C35970089D1E8 /* Components */,
+				CE56D3842B3C34110089D1E8 /* Home */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CE56D3842B3C34110089D1E8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE56D3852B3C34150089D1E8 /* ViewModels */,
+				CE56D3862B3C341F0089D1E8 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CE56D3852B3C34150089D1E8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CE56D3862B3C341F0089D1E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE56D3872B3C34360089D1E8 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE56D3892B3C35970089D1E8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE56D38A2B3C359E0089D1E8 /* CircleButton */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CE56D38A2B3C359E0089D1E8 /* CircleButton */ = {
+			isa = PBXGroup;
+			children = (
+				CE56D38B2B3C35B20089D1E8 /* CircleButtonView.swift */,
+				CE56D38D2B3C38710089D1E8 /* CircleButtonAnimationView.swift */,
+			);
+			path = CircleButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +196,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE56D3882B3C34360089D1E8 /* HomeView.swift in Sources */,
 				CE56D3742B3C2A670089D1E8 /* ContentView.swift in Sources */,
+				CE56D38E2B3C38710089D1E8 /* CircleButtonAnimationView.swift in Sources */,
+				CE56D38C2B3C35B20089D1E8 /* CircleButtonView.swift in Sources */,
 				CE56D3722B3C2A670089D1E8 /* CryptoTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
