@@ -22,6 +22,7 @@
 		CE56D38C2B3C35B20089D1E8 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D38B2B3C35B20089D1E8 /* CircleButtonView.swift */; };
 		CE56D38E2B3C38710089D1E8 /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D38D2B3C38710089D1E8 /* CircleButtonAnimationView.swift */; };
 		CE5F06092B3D6D57004B770C /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F06082B3D6D57004B770C /* CoinModel.swift */; };
+		CEA2C70F2B42AA5400849603 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2C70E2B42AA5400849603 /* SearchBarView.swift */; };
 		CEED7D762B3D81D200585C40 /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED7D752B3D81D200585C40 /* CoinRowView.swift */; };
 		CEED7D792B3D821A00585C40 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED7D782B3D821A00585C40 /* PreviewProvider.swift */; };
 		CEFBBCB52B41E1A1004FD623 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBBCB42B41E1A1004FD623 /* LocalFileManager.swift */; };
@@ -45,6 +46,7 @@
 		CE56D38B2B3C35B20089D1E8 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		CE56D38D2B3C38710089D1E8 /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
 		CE5F06082B3D6D57004B770C /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
+		CEA2C70E2B42AA5400849603 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		CEED7D752B3D81D200585C40 /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
 		CEED7D782B3D821A00585C40 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		CEFBBCB42B41E1A1004FD623 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		CE56D3892B3C35970089D1E8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CEA2C70D2B42AA3F00849603 /* SearchBar */,
 				CE1350032B415DFA00E2C6A1 /* CoinImage */,
 				CE56D38A2B3C359E0089D1E8 /* CircleButton */,
 			);
@@ -188,6 +191,14 @@
 				CE5F06082B3D6D57004B770C /* CoinModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CEA2C70D2B42AA3F00849603 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				CEA2C70E2B42AA5400849603 /* SearchBarView.swift */,
+			);
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 		CEED7D772B3D81FC00585C40 /* Extensions */ = {
@@ -284,6 +295,7 @@
 				CE1350022B41550300E2C6A1 /* NetworkingManager.swift in Sources */,
 				CE56D3722B3C2A670089D1E8 /* CryptoTrackerApp.swift in Sources */,
 				CE1350092B415E4200E2C6A1 /* CoinImageService.swift in Sources */,
+				CEA2C70F2B42AA5400849603 /* SearchBarView.swift in Sources */,
 				CE2C6ABD2B3EB918009013B7 /* CoinDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,7 +438,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
@@ -462,7 +474,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
