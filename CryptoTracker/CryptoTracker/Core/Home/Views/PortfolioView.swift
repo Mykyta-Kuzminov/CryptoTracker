@@ -10,6 +10,7 @@ import SwiftUI
 struct PortfolioView: View {
     
     @EnvironmentObject private var vm: HomeViewModel
+    @FocusState var isFocused: Bool
     @State private var selectedCoin: CoinModel? = nil
     @State private var quantityText: String = ""
     
@@ -20,6 +21,10 @@ struct PortfolioView: View {
                     SearchBarView(searchText: $vm.searchText)
                     
                     coinLogoList
+                    
+                    if selectedCoin != nil {
+                        portfolioInputSection
+                    }
                 }
             }
             .navigationTitle("Edit Portfolio")
@@ -27,6 +32,10 @@ struct PortfolioView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     XmarkButtonView()
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    trailingNavBarButton
                 }
             }
         }
@@ -59,9 +68,65 @@ extension PortfolioView {
                         )
                 }
             }
-            .padding(.vertical, 4)
+            .frame(height: 120)
             .padding(.leading)
         }
     }
     
+    private var portfolioInputSection: some View {
+        VStack(spacing: 20) {
+            HStack {
+                Text("Current price of \(selectedCoin?.symbol.uppercased() ?? ""):")
+                Spacer()
+                Text(selectedCoin?.currentPrice.asCurrencyWith6Decimals() ?? "")
+            }
+            Divider()
+            HStack {
+                Text("Amount in your portfolio: ")
+                Spacer()
+                TextField("Ex: 1.4", text: $quantityText)
+                    .multilineTextAlignment(.trailing)
+                    .keyboardType(.decimalPad)
+                    .focused($isFocused)
+            }
+            Divider()
+            HStack {
+                Text("Current value")
+                Spacer()
+                Text(getCurrentValue().asCurrencyWith2Decimals())
+            }
+        }
+        .font(.headline)
+        .padding()
+        .animation(.none, value: selectedCoin != nil)
+    }
+    
+    private var trailingNavBarButton: some View {
+        Button {
+            saveButtonPressed()
+        } label: {
+            Image(systemName: "checkmark")
+                .font(.headline)
+        }
+        .opacity(selectedCoin != nil && selectedCoin?.currentHoldings != Double(quantityText) ? 1.0 : 0.0)
+    }
+    
+    private func getCurrentValue() -> Double {
+        if let quantity = Double(quantityText) {
+            return quantity * (selectedCoin?.currentPrice ?? 0)
+        }
+        return 0
+    }
+    
+    private func saveButtonPressed() {
+        withAnimation(.easeIn) {
+            removeSelectedCoin()
+        }
+    }
+    
+    private func removeSelectedCoin() {
+        selectedCoin = nil
+        vm.searchText = ""
+        isFocused = false
+    }
 }
