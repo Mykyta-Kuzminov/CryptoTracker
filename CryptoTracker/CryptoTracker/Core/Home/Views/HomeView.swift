@@ -117,6 +117,13 @@ extension HomeView {
             }
             Text("Price")
                 .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+            Image(systemName: "goforward")
+                .rotationEffect(.degrees(vm.isLoading ? 360 : 0))
+                .onTapGesture {
+                    withAnimation(.spring()) {
+                        vm.reloadData()
+                    }
+                }
         }
         .font(.caption)
         .foregroundStyle(Color.secondaryText)
