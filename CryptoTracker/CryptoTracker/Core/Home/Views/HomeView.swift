@@ -110,13 +110,47 @@ extension HomeView {
     
     private var columnTitles: some View {
         HStack {
-            Text("Coin")
-            Spacer()
-            if showPortfolio {
-                Text("Holdings")
+            HStack(spacing: 4) {
+                Text("Coin")
+                Image(systemName: "chevron.down")
+                    .opacity((vm.sortOption == .rank || vm.sortOption == .rankReversed) ? 1.0 : 0.0)
+                    .rotationEffect(.degrees(vm.sortOption == .rank ? 0 : 180))
             }
-            Text("Price")
-                .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+            .onTapGesture {
+                withAnimation(.linear) {
+                    vm.sortOption = vm.sortOption == .rank ? .rankReversed : .rank
+                }
+            }
+            
+            Spacer()
+            
+            if showPortfolio {
+                HStack(spacing: 4) {
+                    Text("Holdings")
+                    Image(systemName: "chevron.down")
+                        .opacity((vm.sortOption == .holdings || vm.sortOption == .holdingsReversed) ? 1.0 : 0.0)
+                        .rotationEffect(.degrees(vm.sortOption == .holdings ? 0 : 180))
+                }
+                .onTapGesture {
+                    withAnimation(.linear) {
+                        vm.sortOption = vm.sortOption == .holdings ? .holdingsReversed : .holdings
+                    }
+                }
+            }
+            
+            HStack(spacing: 4) {
+                Text("Price")
+                    .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+                Image(systemName: "chevron.down")
+                    .opacity((vm.sortOption == .price || vm.sortOption == .priceReversed) ? 1.0 : 0.0)
+                    .rotationEffect(.degrees(vm.sortOption == .price ? 0 : 180))
+            }
+            .onTapGesture {
+                withAnimation(.linear) {
+                    vm.sortOption = vm.sortOption == .price ? .priceReversed : .price
+                }
+            }
+            
             Image(systemName: "goforward")
                 .rotationEffect(.degrees(vm.isLoading ? 360 : 0))
                 .onTapGesture {
