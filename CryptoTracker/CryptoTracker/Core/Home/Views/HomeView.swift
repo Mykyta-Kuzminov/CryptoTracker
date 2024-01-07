@@ -12,6 +12,7 @@ struct HomeView: View {
     @EnvironmentObject private var vm: HomeViewModel
     @State private var showPortfolio: Bool = false
     @State private var showPortfolioSheet: Bool = false
+    @State private var path = NavigationPath()
     
     var body: some View {
         ZStack {
@@ -26,12 +27,14 @@ struct HomeView: View {
                 
                 columnTitles
                 
-                if !showPortfolio {
-                    allCoinsList
-                }
-                
-                if showPortfolio {
-                    portfolioCoinsList
+                NavigationStack(path: $path) {
+                    if !showPortfolio {
+                        allCoinsList
+                    }
+                    
+                    if showPortfolio {
+                        portfolioCoinsList
+                    }
                 }
                 
                 Spacer(minLength: 0)
@@ -90,21 +93,33 @@ extension HomeView {
         List {
             ForEach(vm.allCoins) { coin in
                 CoinRowView(coin: coin, showHoldingsColumn: false)
+                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .onTapGesture {
+                        path.append(coin)
+                    }
             }
         }
-        .listStyle(.plain)
-        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+        .navigationDestination(for: CoinModel.self) { coin in
+            DetailView(coin: coin)
+        }
         .transition(.move(edge: .leading))
+        .listStyle(.plain)
     }
     
     private var portfolioCoinsList: some View {
         List {
             ForEach(vm.portfolioCoins) { coin in
                 CoinRowView(coin: coin, showHoldingsColumn: true)
+                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .onTapGesture {
+                        path.append(coin)
+                    }
             }
         }
+        .navigationDestination(for: CoinModel.self) { coin in
+            DetailView(coin: coin)
+        }
         .listStyle(.plain)
-        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
         .transition(.move(edge: .trailing))
     }
     

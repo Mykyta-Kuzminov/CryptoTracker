@@ -19,7 +19,7 @@ struct CryptoTrackerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
+            NavigationStack() {
                 HomeView()
                     .toolbar(.hidden)
                     .environmentObject(vm)

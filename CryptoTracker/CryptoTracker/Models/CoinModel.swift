@@ -50,7 +50,8 @@ import Foundation
    }
  */
 
-struct CoinModel: Identifiable, Codable {
+struct CoinModel: Identifiable, Hashable, Codable {
+    
     let id, symbol, name, image: String
     let currentPrice: Double
     let marketCap, marketCapRank, fullyDilutedValuation, totalVolume: Double?
@@ -108,6 +109,6 @@ struct CoinModel: Identifiable, Codable {
     }
 }
 
-struct SparklineIn7D: Codable {
+struct SparklineIn7D: Codable, Hashable {
     let price: [Double]?
 }
