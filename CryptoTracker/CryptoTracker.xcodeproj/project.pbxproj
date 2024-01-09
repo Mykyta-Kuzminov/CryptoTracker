@@ -20,6 +20,8 @@
 		CE422C652B44068300CAD333 /* HomeStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE422C642B44068300CAD333 /* HomeStatsView.swift */; };
 		CE422C672B4417E900CAD333 /* MarketDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE422C662B4417E900CAD333 /* MarketDataModel.swift */; };
 		CE422C692B441E7E00CAD333 /* MarketDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE422C682B441E7E00CAD333 /* MarketDataService.swift */; };
+		CE45E7092B4D4772006A23B5 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45E7082B4D4772006A23B5 /* ChartView.swift */; };
+		CE45E70B2B4D58AB006A23B5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45E70A2B4D58AB006A23B5 /* Date.swift */; };
 		CE4F73172B4819F70060D673 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F73162B4819F70060D673 /* HapticManager.swift */; };
 		CE56D3722B3C2A670089D1E8 /* CryptoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D3712B3C2A670089D1E8 /* CryptoTrackerApp.swift */; };
 		CE56D3742B3C2A670089D1E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D3732B3C2A670089D1E8 /* ContentView.swift */; };
@@ -57,6 +59,8 @@
 		CE422C642B44068300CAD333 /* HomeStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatsView.swift; sourceTree = "<group>"; };
 		CE422C662B4417E900CAD333 /* MarketDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataModel.swift; sourceTree = "<group>"; };
 		CE422C682B441E7E00CAD333 /* MarketDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataService.swift; sourceTree = "<group>"; };
+		CE45E7082B4D4772006A23B5 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		CE45E70A2B4D58AB006A23B5 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CE4F73162B4819F70060D673 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		CE56D36E2B3C2A670089D1E8 /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE56D3712B3C2A670089D1E8 /* CryptoTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerApp.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				CE21556E2B4AAD5E00335B77 /* DetailView.swift */,
+				CE45E7082B4D4772006A23B5 /* ChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 			children = (
 				CEED7D782B3D821A00585C40 /* PreviewProvider.swift */,
 				CE0426B52B3D86D000B97CBB /* Double.swift */,
+				CE45E70A2B4D58AB006A23B5 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -388,12 +394,14 @@
 				CEED7D762B3D81D200585C40 /* CoinRowView.swift in Sources */,
 				CE774E712B4C28F20075F6AE /* CoinDetailModel.swift in Sources */,
 				CE0426B62B3D86D000B97CBB /* Double.swift in Sources */,
+				CE45E70B2B4D58AB006A23B5 /* Date.swift in Sources */,
 				CE422C632B4403A700CAD333 /* StatisticView.swift in Sources */,
 				CEF5F3842B457B3E00CA0F30 /* PortfolioView.swift in Sources */,
 				CE1350022B41550300E2C6A1 /* NetworkingManager.swift in Sources */,
 				CE422C692B441E7E00CAD333 /* MarketDataService.swift in Sources */,
 				CE56D3722B3C2A670089D1E8 /* CryptoTrackerApp.swift in Sources */,
 				CEBDE4062B46BC3C00C62494 /* PortfolioContainer.xcdatamodeld in Sources */,
+				CE45E7092B4D4772006A23B5 /* ChartView.swift in Sources */,
 				CE1350092B415E4200E2C6A1 /* CoinImageService.swift in Sources */,
 				CEA2C70F2B42AA5400849603 /* SearchBarView.swift in Sources */,
 				CE2C6ABD2B3EB918009013B7 /* CoinDataService.swift in Sources */,

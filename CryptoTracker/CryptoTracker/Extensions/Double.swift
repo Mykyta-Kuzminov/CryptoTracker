@@ -101,23 +101,23 @@ extension Double {
         case 1_000_000_000_000...:
             let formatted = num / 1_000_000_000_000
             let stringFormatted = formatted.asNumberString()
-            return "\(sign)\(stringFormatted)Tr"
+            return "$ \(sign)\(stringFormatted)Tr"
         case 1_000_000_000...:
             let formatted = num / 1_000_000_000
             let stringFormatted = formatted.asNumberString()
-            return "\(sign)\(stringFormatted)Bn"
+            return "$ \(sign)\(stringFormatted)Bn"
         case 1_000_000...:
             let formatted = num / 1_000_000
             let stringFormatted = formatted.asNumberString()
-            return "\(sign)\(stringFormatted)M"
+            return "$ \(sign)\(stringFormatted)M"
         case 1_000...:
             let formatted = num / 1_000
             let stringFormatted = formatted.asNumberString()
-            return "\(sign)\(stringFormatted)K"
+            return "$ \(sign)\(stringFormatted)K"
         case 0:
             return self.asNumberString()
         default:
-            return "\(sign)\(self)"
+            return "\(sign)\(self.asCurrencyWith2Decimals())"
         }
     }
 }
